@@ -1,0 +1,121 @@
+<-!margin负值法->
+<-!
+	1.html代码中，mid要放最前边
+
+	2.将mid  left  right 都设为float:left
+
+	3.将main占满 width:100%
+
+	4.此时main占满了，所以要把left拉到最左边，使用margin-left:-100%  
+	右边使用margin-left:-120px
+
+
+	5.main内容被覆盖了吧，除了使用外围的padding，还可以考虑使用margin。
+
+	给main增加一个内层div-- mid-inner, 然后margin:0 220px 0 140px
+	注意留够充足的边距。
+	6.当加入padding时，可能出现模型溢出，将溢出的模型加上box-sizing: border-box; 属性即可防止溢出。
+->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>demo3</title>
+	<style type="text/css">
+	.mid,
+	.left,
+	.right{
+		float:left;
+
+
+	}
+		.container{
+			
+			position: relative;
+			background-color :#eee;
+			border:solid #999 1px;
+			padding: 20px;
+			margin:20px;
+			min-height:460px;
+		}
+		.left{
+			
+			margin-left: -100%;
+			width: 200px;
+			border: solid #999 1px;
+			background-color:#fff;
+
+			
+		}
+		.mid{
+			width: 100%;
+
+			
+		}
+		.mid-inner{
+			margin-left: 220px;
+			margin-right: 140px;
+
+			border:solid #999 1px;
+		
+			background-color:#fff;
+
+			padding: 10px;
+		}
+		.right{
+		
+			margin-left:-120px;
+			width: 120px;
+			background-color:#fff;
+			border:solid #999 1px;
+			box-sizing: border-box;   /*用于自适应边框大小,避免因边框的加入导致盒模型溢出*/
+			
+			
+		}
+		.logo{
+			padding: 15px;
+
+
+		}
+		.logoname{
+			position: absolute;
+			top: 20px;
+			left: 140px;
+		}
+		
+	</style>
+
+</head>
+<body>
+	<div class="container">
+		
+		<div class="mid">
+		<div class="mid-inner">
+			<p>公司拥有一支富有朝气的团队，我们的团队成员来自五湖四海，为了一个共同的梦想走到了一起。我们虽然拥有不同的性格、教育背景和工作经历，但都有一个共同的特点：热爱互联网、热爱手机游戏！</p>
+			<p>我们激情四射，但底蕴丰厚；我们活力无限，也同样耐得住寂寞；我们满怀理想，脚踏实地去实现；我们创想无限，我们拒绝平庸！</p>
+			<p>在这里，我们优势互补，不用担心自己想法的实施局限于自己的能力范围；在这里，我们的每个想法都会得到团队中肯的意见，最终趋于完美；在这里，我们在一起，没有曲高和寡，只有知己相伴；在这里，我们的工作受到应得的肯定，付出一定有回报！</p>
+			<p>公司拥有一支富有朝气的团队，我们的团队成员来自五湖四海，为了一个共同的梦想走到了一起。我们虽然拥有不同的性格、教育背景和工作经历，但都有一个共同的特点：热爱互联网、热爱手机游戏！</p>
+			<p>我们激情四射，但底蕴丰厚；我们活力无限，也同样耐得住寂寞；我们满怀理想，脚踏实地去实现；我们创想无限，我们拒绝平庸！</p>
+			<p>在这里，我们优势互补，不用担心自己想法的实施局限于自己的能力范围；在这里，我们的每个想法都会得到团队中肯的意见，最终趋于完美；在这里，我们在一起，没有曲高和寡，只有知己相伴；在这里，我们的工作受到应得的肯定，付出一定有回报！</p>
+			<p>公司拥有一支富有朝气的团队，我们的团队成员来自五湖四海，为了一个共同的梦想走到了一起。我们虽然拥有不同的性格、教育背景和工作经历，但都有一个共同的特点：热爱互联网、热爱手机游戏！</p>
+			<p>我们激情四射，但底蕴丰厚；我们活力无限，也同样耐得住寂寞；我们满怀理想，脚踏实地去实现；我们创想无限，我们拒绝平庸！</p>
+			<p>在这里，我们优势互补，不用担心自己想法的实施局限于自己的能力范围；在这里，我们的每个想法都会得到团队中肯的意见，最终趋于完美；在这里，我们在一起，没有曲高和寡，只有知己相伴；在这里，我们的工作受到应得的肯定，付出一定有回报！</p>
+		</div>	
+		</div>
+		<div class="left">
+			<img  class="logo" title="logo" src="file://j:/baidu job/job3/logo.png">
+			<p class="logoname">团队名称</p>
+			
+		</div>
+
+		<div class="right">
+			<img class="logo" title="logo" src="file://j:/baidu job/job3/logo.png">
+			<img class="logo" title="logo" src="file://j:/baidu job/job3/logo.png">
+			<img class="logo" title="logo" src="file://j:/baidu job/job3/logo.png">
+			<img class="logo" title="logo" src="file://j:/baidu job/job3/logo.png">	
+		</div>
+
+		
+	</div>	
+</body>
+</html>
